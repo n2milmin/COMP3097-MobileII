@@ -44,9 +44,11 @@ struct ContentView: View {
                     NavigationLink(destination: DetailView(book: book)){
                         Text(book.title)
                             .font(.headline)
+                            .padding()
                         Text(book.author)
                             .font(.subheadline)
                     }
+                    .navigationTitle("Books")
                 }
             }
         }
@@ -64,7 +66,8 @@ struct DetailView: View {
     let book: Book
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack {
+            NavigationLink("Info", destination: InfoView())
             Text(book.title)
                 .font(.headline)
             Text(book.author)
@@ -73,6 +76,13 @@ struct DetailView: View {
                 .font(.body)
                 .padding()
         }
+    }
+}
+
+struct InfoView: View {
+    var body: some View {
+        NavigationLink("Home", destination: ContentView())
+        Text("Made by Nicole Nilmine")
     }
 }
 
