@@ -14,15 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var tableData = [""]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        textField.keyboardType = .numberPad
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-    
-    @IBAction func timesTable(_ sender: Any) {
+    @IBAction func timesTable(_ sender: UIButton) {
         let number = Int(textField.text ?? "1")
         tableData = (1...10).map {
             ("\(number ?? 1) x \($0) = \((number ?? 1) * $0)")
@@ -30,6 +22,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        textField.keyboardType = .numberPad
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
@@ -41,4 +42,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 }
-
