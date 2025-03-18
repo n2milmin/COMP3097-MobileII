@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B23582FA2D899E1C00F154BD /* KomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23582F92D899E1C00F154BD /* KomeApp.swift */; };
+		B23582FC2D899E1C00F154BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23582FB2D899E1C00F154BD /* ContentView.swift */; };
+		B23582FE2D899E1D00F154BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23582FD2D899E1D00F154BD /* Assets.xcassets */; };
+		B23583012D899E1D00F154BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23583002D899E1D00F154BD /* Preview Assets.xcassets */; };
+		B235830B2D899E1D00F154BD /* KomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235830A2D899E1D00F154BD /* KomeTests.swift */; };
+		B23583152D899E1D00F154BD /* KomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23583142D899E1D00F154BD /* KomeUITests.swift */; };
+		B23583172D899E1D00F154BD /* KomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23583162D899E1D00F154BD /* KomeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B23583072D899E1D00F154BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23582EE2D899E1C00F154BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23582F52D899E1C00F154BD;
+			remoteInfo = Kome;
+		};
+		B23583112D899E1D00F154BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23582EE2D899E1C00F154BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23582F52D899E1C00F154BD;
+			remoteInfo = Kome;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B23582F62D899E1C00F154BD /* Kome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23582F92D899E1C00F154BD /* KomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomeApp.swift; sourceTree = "<group>"; };
+		B23582FB2D899E1C00F154BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B23582FD2D899E1D00F154BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B23583002D899E1D00F154BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B23583062D899E1D00F154BD /* KomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B235830A2D899E1D00F154BD /* KomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomeTests.swift; sourceTree = "<group>"; };
+		B23583102D899E1D00F154BD /* KomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23583142D899E1D00F154BD /* KomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomeUITests.swift; sourceTree = "<group>"; };
+		B23583162D899E1D00F154BD /* KomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B23582F32D899E1C00F154BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23583032D899E1D00F154BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B235830D2D899E1D00F154BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B23582ED2D899E1C00F154BD = {
+			isa = PBXGroup;
+			children = (
+				B23582F82D899E1C00F154BD /* Kome */,
+				B23583092D899E1D00F154BD /* KomeTests */,
+				B23583132D899E1D00F154BD /* KomeUITests */,
+				B23582F72D899E1C00F154BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B23582F72D899E1C00F154BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B23582F62D899E1C00F154BD /* Kome.app */,
+				B23583062D899E1D00F154BD /* KomeTests.xctest */,
+				B23583102D899E1D00F154BD /* KomeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B23582F82D899E1C00F154BD /* Kome */ = {
+			isa = PBXGroup;
+			children = (
+				B23582F92D899E1C00F154BD /* KomeApp.swift */,
+				B23582FB2D899E1C00F154BD /* ContentView.swift */,
+				B23582FD2D899E1D00F154BD /* Assets.xcassets */,
+				B23582FF2D899E1D00F154BD /* Preview Content */,
+			);
+			path = Kome;
+			sourceTree = "<group>";
+		};
+		B23582FF2D899E1D00F154BD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B23583002D899E1D00F154BD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B23583092D899E1D00F154BD /* KomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B235830A2D899E1D00F154BD /* KomeTests.swift */,
+			);
+			path = KomeTests;
+			sourceTree = "<group>";
+		};
+		B23583132D899E1D00F154BD /* KomeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B23583142D899E1D00F154BD /* KomeUITests.swift */,
+				B23583162D899E1D00F154BD /* KomeUITestsLaunchTests.swift */,
+			);
+			path = KomeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B23582F52D899E1C00F154BD /* Kome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B235831A2D899E1D00F154BD /* Build configuration list for PBXNativeTarget "Kome" */;
+			buildPhases = (
+				B23582F22D899E1C00F154BD /* Sources */,
+				B23582F32D899E1C00F154BD /* Frameworks */,
+				B23582F42D899E1C00F154BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kome;
+			productName = Kome;
+			productReference = B23582F62D899E1C00F154BD /* Kome.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B23583052D899E1D00F154BD /* KomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B235831D2D899E1D00F154BD /* Build configuration list for PBXNativeTarget "KomeTests" */;
+			buildPhases = (
+				B23583022D899E1D00F154BD /* Sources */,
+				B23583032D899E1D00F154BD /* Frameworks */,
+				B23583042D899E1D00F154BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23583082D899E1D00F154BD /* PBXTargetDependency */,
+			);
+			name = KomeTests;
+			productName = KomeTests;
+			productReference = B23583062D899E1D00F154BD /* KomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B235830F2D899E1D00F154BD /* KomeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23583202D899E1D00F154BD /* Build configuration list for PBXNativeTarget "KomeUITests" */;
+			buildPhases = (
+				B235830C2D899E1D00F154BD /* Sources */,
+				B235830D2D899E1D00F154BD /* Frameworks */,
+				B235830E2D899E1D00F154BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23583122D899E1D00F154BD /* PBXTargetDependency */,
+			);
+			name = KomeUITests;
+			productName = KomeUITests;
+			productReference = B23583102D899E1D00F154BD /* KomeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B23582EE2D899E1C00F154BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					B23582F52D899E1C00F154BD = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					B23583052D899E1D00F154BD = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = B23582F52D899E1C00F154BD;
+					};
+					B235830F2D899E1D00F154BD = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = B23582F52D899E1C00F154BD;
+					};
+				};
+			};
+			buildConfigurationList = B23582F12D899E1C00F154BD /* Build configuration list for PBXProject "Kome" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B23582ED2D899E1C00F154BD;
+			productRefGroup = B23582F72D899E1C00F154BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B23582F52D899E1C00F154BD /* Kome */,
+				B23583052D899E1D00F154BD /* KomeTests */,
+				B235830F2D899E1D00F154BD /* KomeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B23582F42D899E1C00F154BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23583012D899E1D00F154BD /* Preview Assets.xcassets in Resources */,
+				B23582FE2D899E1D00F154BD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23583042D899E1D00F154BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B235830E2D899E1D00F154BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B23582F22D899E1C00F154BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23582FC2D899E1C00F154BD /* ContentView.swift in Sources */,
+				B23582FA2D899E1C00F154BD /* KomeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23583022D899E1D00F154BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B235830B2D899E1D00F154BD /* KomeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B235830C2D899E1D00F154BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23583172D899E1D00F154BD /* KomeUITestsLaunchTests.swift in Sources */,
+				B23583152D899E1D00F154BD /* KomeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B23583082D899E1D00F154BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23582F52D899E1C00F154BD /* Kome */;
+			targetProxy = B23583072D899E1D00F154BD /* PBXContainerItemProxy */;
+		};
+		B23583122D899E1D00F154BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23582F52D899E1C00F154BD /* Kome */;
+			targetProxy = B23583112D899E1D00F154BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B23583182D899E1D00F154BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B23583192D899E1D00F154BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B235831B2D899E1D00F154BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kome/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kome.Kome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B235831C2D899E1D00F154BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kome/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kome.Kome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B235831E2D899E1D00F154BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kome.KomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kome.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kome";
+			};
+			name = Debug;
+		};
+		B235831F2D899E1D00F154BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kome.KomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kome.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kome";
+			};
+			name = Release;
+		};
+		B23583212D899E1D00F154BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kome.KomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kome;
+			};
+			name = Debug;
+		};
+		B23583222D899E1D00F154BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kome.KomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kome;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B23582F12D899E1C00F154BD /* Build configuration list for PBXProject "Kome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23583182D899E1D00F154BD /* Debug */,
+				B23583192D899E1D00F154BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B235831A2D899E1D00F154BD /* Build configuration list for PBXNativeTarget "Kome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B235831B2D899E1D00F154BD /* Debug */,
+				B235831C2D899E1D00F154BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B235831D2D899E1D00F154BD /* Build configuration list for PBXNativeTarget "KomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B235831E2D899E1D00F154BD /* Debug */,
+				B235831F2D899E1D00F154BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23583202D899E1D00F154BD /* Build configuration list for PBXNativeTarget "KomeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23583212D899E1D00F154BD /* Debug */,
+				B23583222D899E1D00F154BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B23582EE2D899E1C00F154BD /* Project object */;
+}
