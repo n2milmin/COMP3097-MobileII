@@ -21,7 +21,7 @@
 		B23583982D89A88C00F154BD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23583952D89A88C00F154BD /* Profile.storyboard */; };
 		B2A026842D89AF4F00A22069 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A026832D89AF4F00A22069 /* HomeController.swift */; };
 		B2A026862D89AF5B00A22069 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A026852D89AF5B00A22069 /* ProfileController.swift */; };
-		B2A026882D89AF6A00A22069 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A026872D89AF6A00A22069 /* RecipeController.swift */; };
+		B2A026882D89AF6A00A22069 /* RecipesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A026872D89AF6A00A22069 /* RecipesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		B23583952D89A88C00F154BD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B2A026832D89AF4F00A22069 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		B2A026852D89AF5B00A22069 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		B2A026872D89AF6A00A22069 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
+		B2A026872D89AF6A00A22069 /* RecipesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 				B235836B2D89A7B200F154BD /* Main.storyboard */,
 				B2A026832D89AF4F00A22069 /* HomeController.swift */,
 				B2A026852D89AF5B00A22069 /* ProfileController.swift */,
-				B2A026872D89AF6A00A22069 /* RecipeController.swift */,
+				B2A026872D89AF6A00A22069 /* RecipesController.swift */,
 				B23583952D89A88C00F154BD /* Profile.storyboard */,
 				B235836E2D89A7B300F154BD /* Assets.xcassets */,
 				B23583702D89A7B300F154BD /* LaunchScreen.storyboard */,
@@ -280,7 +280,7 @@
 				B235836A2D89A7B200F154BD /* ViewController.swift in Sources */,
 				B23583662D89A7B200F154BD /* AppDelegate.swift in Sources */,
 				B23583682D89A7B200F154BD /* SceneDelegate.swift in Sources */,
-				B2A026882D89AF6A00A22069 /* RecipeController.swift in Sources */,
+				B2A026882D89AF6A00A22069 /* RecipesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = ""
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         configureItems()
     }
 
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
             target: self,
             action: #selector(profile)
         )
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Home",
             style: .plain,
             target: self,
@@ -37,16 +38,20 @@ class ViewController: UIViewController {
         )
     }
     
-    @objc func profile(){
-        
+    @objc func profile(_ sender: UIBarButtonItem){
+        if let viewController = storyboard?.instantiateViewController(withIdentifier: "ProfileController") {
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
-    @objc func home() {
-        
+    @objc func home(_ sender: UIBarButtonItem) {
+        if let viewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") {
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     @objc func recipes() {
-        
+        navigationController?.pushViewController(NextViewController(nibName: "RecipesController", bundle: nil), animated: true)
     }
 }
 
