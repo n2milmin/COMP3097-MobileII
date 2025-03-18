@@ -1,79 +1,87 @@
 import SwiftUI
 
-struct EditDietPrefView: View {
-    @State private var selectedPreferences: [String] = []
-    @State private var dietPreferences: [String] = ["Vegetarian", "Vegan", "Gluten-Free", "Keto", "Paleo"] // Example preferences
-    @State private var userDietPreferences: [String] = ["Vegetarian", "Keto"] // Example user preferences, fetched from the database
+struct EditDietPreferencesView: View {
     
-    // Replace this with your actual database helper method for saving data
-    func savePreferences() {
-        // Here you can update the database with the selected preferences
-        print("Selected preferences: \(selectedPreferences)")
-        // You can call your database save method here
-        // e.g., dbHelper.updateDietPreferences(userId: userId, preferences: selectedPreferences)
-    }
-    
+    var userId: Int
+    @State private var dietPreferences: [String] = []
+    @State private var newPreference: String = ""
+    var databaseHelper = DatabaseHelper()
+
     var body: some View {
         VStack {
-            Text("Dietary Preferences")
+            Text("Edit Dietary Preferences")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.bottom, 20)
-
-            // List of dietary preferences with checkboxes
-            List(dietPreferences, id: \.self) { preference in
-                HStack {
-                    Text(preference)
-                        .font(.title3)
-                    Spacer()
-                    CheckBoxView(isChecked: self.selectedPreferences.contains(preference)) {
-                        if self.selectedPreferences.contains(preference) {
-                            self.selectedPreferences.removeAll { $0 == preference }
-                        } else {
-                            self.selectedPreferences.append(preference)
+                .padding()
+            
+            // List dietary preferences
+            List {
+                ForEach(dietPreferences, id: \.self) { preference in
+                    HStack {
+                        Text(preference)
+                        Spacer()
+                        Button(action: {
+                            removeDietPreference(preference)
+                        }) {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
                         }
                     }
                 }
-                .padding(.vertical, 5)
+                .onDelete(perform: deleteDietPreference)
             }
             
-            // Save button
-            Button(action: {
-                savePreferences()
-            }) {
-                Text("Save")
-                    .font(.title)
-                    .frame(maxWidth: .infinity, minHeight: 50)
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.top, 20)
+            // Add new dietary preference input
+            HStack {
+                TextField("Enter new dietary preference", text: $newPreference)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button(action: addDietPreference) {
+                    Text("Add Preference")
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                }
+                .padding()
             }
-            .padding(.horizontal, 20)
         }
-        .padding()
         .onAppear {
-            // Initialize the selected preferences with the user's existing preferences
-            self.selectedPreferences = self.userDietPreferences
+            loadDietPreferences()
+        }
+    }
+    
+    func loadDietPreferences() {
+        guard let userPreferences = databaseHelper.getDietPrefByUserId(userId: userId) else {
+            print("No dietary preferences found!")
+            return
+        }
+        dietPreferences = userPreferences.map { $0 }
+    }
+
+    func addDietPreference() {
+        if !newPreference.isEmpty {
+            databaseHelper.addDietPreference(userId: userId, preference: newPreference)
+            dietPreferences.append(newPreference)
+            newPreference = ""
+        }
+    }
+
+    func removeDietPreference(_ preference: String) {
+        guard let preferenceIndex = dietPreferences.firstIndex(of: preference) else { return }
+        dietPreferences.remove(at: preferenceIndex)
+        databaseHelper.deleteDietPreference(dietPrefId: preferenceIndex)  // You might need a way to get the diet preference ID
+    }
+    
+    func deleteDietPreference(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let preference = dietPreferences[index]
+            removeDietPreference(preference)
         }
     }
 }
 
-struct CheckBoxView: View {
-    var isChecked: Bool
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: isChecked ? "checkmark.square" : "square")
-                .font(.title)
-                .foregroundColor(.green)
-        }
-    }
-}
-
-struct EditDietPrefView_Previews: PreviewProvider {
+struct EditDietPreferencesView_Previews: PreviewProvider {
     static var previews: some View {
-        EditDietPrefView()
+        EditDietPreferencesView(userId: 1)
     }
 }
