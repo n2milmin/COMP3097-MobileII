@@ -1,74 +1,87 @@
 import SwiftUI
 
 struct EditAllergiesView: View {
-    @State private var allergies: [String] = ["Peanuts", "Shellfish", "Gluten", "Dairy", "Soy"] // Example allergies
-    @State private var selectedAllergies: [String] = ["Peanuts", "Soy"] // Example user allergies (could be fetched from database)
     
-    // Simulated Database Interaction for saving allergies
-    func saveAllergies() {
-        // Here you can update the database with the selected allergies
-        print("Selected allergies: \(selectedAllergies)")
-        // Call your actual database saving logic here
-        // e.g., dbHelper.updateAllergies(userId: userId, allergies: selectedAllergies)
-    }
+    var userId: Int
+    @State private var allergies: [String] = []
+    @State private var newAllergy: String = ""
+    var databaseHelper = DatabaseHelper()
 
     var body: some View {
         VStack {
-            Text("Allergies & Restrictions")
+            Text("Edit Allergies")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.bottom, 20)
+                .padding()
             
-            // List of allergies with checkboxes
-            List(allergies, id: \.self) { allergy in
-                HStack {
-                    Text(allergy)
-                        .font(.title3)
-                    Spacer()
-                    CheckBoxView(isChecked: self.selectedAllergies.contains(allergy)) {
-                        if self.selectedAllergies.contains(allergy) {
-                            self.selectedAllergies.removeAll { $0 == allergy }
-                        } else {
-                            self.selectedAllergies.append(allergy)
+            // List allergies
+            List {
+                ForEach(allergies, id: \.self) { allergy in
+                    HStack {
+                        Text(allergy)
+                        Spacer()
+                        Button(action: {
+                            removeAllergy(allergy)
+                        }) {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
                         }
                     }
                 }
-                .padding(.vertical, 5)
+                .onDelete(perform: deleteAllergy)
             }
             
-            // Save button
-            Button(action: {
-                saveAllergies()
-            }) {
-                Text("Save")
-                    .font(.title)
-                    .frame(maxWidth: .infinity, minHeight: 50)
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.top, 20)
+            // Add new allergy input
+            HStack {
+                TextField("Enter new allergy", text: $newAllergy)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button(action: addAllergy) {
+                    Text("Add Allergy")
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                }
+                .padding()
             }
-            .padding(.horizontal, 20)
         }
-        .padding()
+        .onAppear {
+            loadAllergies()
+        }
     }
-}
-
-struct CheckBoxView: View {
-    var isChecked: Bool
-    var action: () -> Void
     
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: isChecked ? "checkmark.square" : "square")
-                .font(.title)
-                .foregroundColor(.green)
+    func loadAllergies() {
+        guard let userAllergies = databaseHelper.getAllergiesByUserId(userId: userId) else {
+            print("No allergies found!")
+            return
+        }
+        allergies = userAllergies.map { $0 }
+    }
+
+    func addAllergy() {
+        if !newAllergy.isEmpty {
+            databaseHelper.addAllergy(userId: userId, allergy: newAllergy)
+            allergies.append(newAllergy)
+            newAllergy = ""
+        }
+    }
+
+    func removeAllergy(_ allergy: String) {
+        guard let allergyIndex = allergies.firstIndex(of: allergy) else { return }
+        allergies.remove(at: allergyIndex)
+        databaseHelper.deleteAllergy(allergyId: allergyIndex)  // You might need a way to get the allergy ID
+    }
+    
+    func deleteAllergy(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let allergy = allergies[index]
+            removeAllergy(allergy)
         }
     }
 }
 
 struct EditAllergiesView_Previews: PreviewProvider {
     static var previews: some View {
-        EditAllergiesView()
+        EditAllergiesView(userId: 1)
     }
 }
