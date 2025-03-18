@@ -1,96 +1,129 @@
 import SwiftUI
 
 struct EditProfileView: View {
-    @State private var name: String = "John Doe"
-    @State private var heightFt: String = "5"
-    @State private var heightIn: String = "10"
-    @State private var weight: String = "180"
-    @State private var activityLvl: String = "Moderate"
-    @State private var yearJoined: String = "2020"
     
-    private let activityLevels = ["Sedentary", "Light", "Moderate", "Active", "Very Active"]
+    var userId: Int
+    @State private var user: User?
+    @State private var name: String = ""
+    @State private var profilePic: String = ""
+    @State private var heightFt: String = ""
+    @State private var heightIn: String = ""
+    @State private var weight: String = ""
+    @State private var activityLvl: String = ""
+    @State private var yearJoined: String = ""
+    
+    var databaseHelper = DatabaseHelper()
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                
-                // Profile Pic (Static Image for now)
-                Image(systemName: "person.crop.circle.fill")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.gray)
-                    .clipShape(Circle())
-                    .shadow(radius: 5)
-                
-                // Name
+        VStack(spacing: 16) {
+            if let user = user {
+                // User Editing Form
                 TextField("Name", text: $name)
-                    .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
                 
-                // Year Joined
-                Text("Member since \(yearJoined)")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                TextField("Profile Picture URL", text: $profilePic)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
                 
-                Divider()
-                
-                // Height
-                HStack {
-                    TextField("Feet", text: $heightFt)
-                        .keyboardType(.numberPad)
-                        .frame(width: 80)
-                        .padding()
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                    TextField("Inches", text: $heightIn)
-                        .keyboardType(.numberPad)
-                        .frame(width: 80)
-                        .padding()
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
-                // Weight
-                TextField("Weight (lbs)", text: $weight)
+                TextField("Height (Ft)", text: $heightFt)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
                     .padding()
+                
+                TextField("Height (In)", text: $heightIn)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .padding()
                 
-                // Activity Level
-                Picker("Activity Level", selection: $activityLvl) {
-                    ForEach(activityLevels, id: \.self) { level in
-                        Text(level)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .padding()
+                TextField("Weight (lbs)", text: $weight)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .padding()
                 
-                // Save Button
+                TextField("Activity Level", text: $activityLvl)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                TextField("Year Joined", text: $yearJoined)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .padding()
+
+                // Save button
                 Button(action: saveProfile) {
-                    Text("Save")
+                    Text("Save Changes")
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
-                        .background(Color.green)
-                        .cornerRadius(10)
+                        .background(Color.blue)
+                        .cornerRadius(8)
                 }
-                .padding(.top)
-                
+                .padding()
+            } else {
+                // Loading state
+                Text("Loading...")
             }
-            .padding()
-            .navigationTitle("Edit Profile")
+        }
+        .onAppear {
+            loadUserData()
         }
     }
     
-    private func saveProfile() {
-        // Simulate saving the profile data
-        print("Profile saved with name: \(name), height: \(heightFt)ft \(heightIn)in, weight: \(weight) lbs, activity level: \(activityLvl), member since: \(yearJoined)")
+    func loadUserData() {
+        guard let fetchedUser = databaseHelper.getUserById(userId: userId) else {
+            print("User not found!")
+            return
+        }
+        self.user = fetchedUser
+        self.name = fetchedUser.name
+        self.profilePic = fetchedUser.profilePic
+        self.heightFt = "\(fetchedUser.heightFt)"
+        self.heightIn = "\(fetchedUser.heightIn)"
+        self.weight = "\(fetchedUser.weight)"
+        self.activityLvl = fetchedUser.activityLvl
+        self.yearJoined = "\(fetchedUser.yearJoined)"
+    }
+    
+    func saveProfile() {
+        guard let updatedHeightFt = Int(heightFt),
+              let updatedHeightIn = Int(heightIn),
+              let updatedWeight = Int64(weight) else {
+            print("Invalid data!")
+            return
+        }
         
-        // In a real app, you would save these values to the database and navigate back to the Profile View
+        let updatedUser = User(id: userId,
+                               name: name,
+                               profilePic: profilePic,
+                               heightFt: updatedHeightFt,
+                               heightIn: updatedHeightIn,
+                               weight: updatedWeight,
+                               activityLvl: activityLvl,
+                               activityLvlPosition: 0,
+                               yearJoined: Int(yearJoined) ?? 0)
+        
+        // Update the user in the database
+        let rowsAffected = databaseHelper.updateUser(userId: userId,
+                                                     name: name,
+                                                     profilePic: profilePic,
+                                                     heightFt: updatedHeightFt,
+                                                     heightIn: updatedHeightIn,
+                                                     weight: updatedWeight,
+                                                     activityLvl: activityLvl,
+                                                     activityLvlPosition: 0,
+                                                     yearJoined: Int(yearJoined) ?? 0)
+        
+        if rowsAffected > 0 {
+            print("Profile updated successfully!")
+        } else {
+            print("Failed to update profile.")
+        }
     }
 }
 
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        EditProfileView()
+        EditProfileView(userId: 1)
     }
 }
